@@ -26,6 +26,11 @@ export const Form = styled.form`
   div {
     margin-top: 10px;
 
+    label {
+      color: whitesmoke;
+      font-size: 18px;
+    }
+
     input {
       background-color: #457b1b;
       padding: 10px;
@@ -36,7 +41,7 @@ export const Form = styled.form`
       text-align: center;
       color: whitesmoke;
       ::placeholder {
-        color: whitesmoke;
+        color: ${shade(0.3, "#F2EDDF")};
       }
     }
     button {

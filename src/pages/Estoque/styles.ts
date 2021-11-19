@@ -66,9 +66,6 @@ export const Tabela = styled.table`
   td {
     padding: 20px;
     border-bottom: 1px solid black;
-    button {
-      border: none;
-    }
   }
 `;
 

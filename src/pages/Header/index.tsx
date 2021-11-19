@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Navegacao } from "./styles";
-import perfil from "../../assets/perfil.png";
+import sair from "../../assets/sair.png";
 import logo from "../../assets/logo.jpeg";
 
 export const Header: React.FC = () => {
@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
       <Navegacao>
         <ul>
           <li>
-            <NavLink to="/">
+            <NavLink to="/dashboard">
               {" "}
               <img src={logo} width="150px" alt="PamonhariaFrancana" />{" "}
             </NavLink>
@@ -38,9 +38,9 @@ export const Header: React.FC = () => {
           </li>
           <div>
             <li>
-              <NavLink to="/perfil">
+              <NavLink to="/">
                 {" "}
-                <img src={perfil} width="50px" alt="Perfil" />{" "}
+                <img src={sair} width="50px" alt="Sair" />{" "}
               </NavLink>
             </li>
           </div>

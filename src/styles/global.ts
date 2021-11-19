@@ -20,7 +20,7 @@ html{
 }
 
 body{
-    background:#dac435  url(${imgbackgroud}) no-repeat 85%  ;
+    background:#dac435 fixed url(${imgbackgroud}) no-repeat 85%  ;
     
     -wekit-font-smoothing: antialiased;
 }

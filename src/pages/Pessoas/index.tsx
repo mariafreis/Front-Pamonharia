@@ -226,14 +226,15 @@ export const Pessoas: React.FC = () => {
       <Title>Vendedores</Title>
       <Form>
         <div>
+          <label>Nome</label>
           <input
             name="name"
             value={actualVendor.name}
-            placeholder="Nome do vendedor"
             onChange={handleChangev}
           />
         </div>
         <div>
+          <label>Celular</label>
           <input
             name="cellphone"
             value={actualVendor.cellphone}
@@ -242,6 +243,7 @@ export const Pessoas: React.FC = () => {
           />
         </div>
         <div>
+          <label>Bairros</label>
           <input
             name="area"
             value={actualVendor.area}

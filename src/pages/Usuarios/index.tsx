@@ -9,7 +9,7 @@ export const Usuarios: React.FC = () => {
     id?: string; // objetos sendo ainda criados não tem id
     name: string;
     email: string;
-    password: string;
+    password?: string;
     nickname: string;
     occupation: string;
   }
@@ -74,10 +74,10 @@ export const Usuarios: React.FC = () => {
       let updateUser = {
         // os dados do usuario para atualizar não pode ter id, este vai na rota
         name: actualUser.name,
-        description: actualUser.email,
-        quantity: actualUser.password,
-        pricecomp: actualUser.nickname,
-        pricevend: actualUser.occupation,
+        email: actualUser.email,
+        password: actualUser.password,
+        nickname: actualUser.nickname,
+        occupation: actualUser.occupation,
       };
       try {
         api
