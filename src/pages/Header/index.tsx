@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
       <Navegacao>
         <ul>
           <li>
-            <NavLink to="/dashboard">
+            <NavLink to="/inicio">
               {" "}
               <img src={logo} width="150px" alt="PamonhariaFrancana" />{" "}
             </NavLink>

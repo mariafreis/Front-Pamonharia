@@ -57,7 +57,7 @@ export const Login: React.FC = () => {
                   // quando recebermos a resposta
                   if (response.data === "Usuário OK") {
                     // senha está correta
-                    history.push("/dashboard"); // direciona usuário para a rota /product
+                    history.push("/inicio"); // direciona usuário para a rota /product
                   } else {
                     // mostra ao usuário o erro do servidor
                     alert(response.data); // Usuário/Senha inválido
