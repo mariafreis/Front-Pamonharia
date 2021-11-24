@@ -1,6 +1,7 @@
 import React from "react";
 import { Title, Title2, Form, Tabela, Linha } from "./styles";
-import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import trash from "../../assets/trashwhite.png";
+import edit from "../../assets/editwhitee.png";
 import { api } from "../../services/api";
 
 export const Inicio: React.FC = () => {
@@ -107,14 +108,14 @@ export const Inicio: React.FC = () => {
                   {" "}
                   {message.text} <Linha></Linha> Por:
                   {message.name}{" "}
-                  <button onClick={() => deleteMessage(message.id)}>
-                    {" "}
-                    <AiFillDelete />{" "}
-                  </button>{" "}
                   <button onClick={() => updateMessage(message)}>
                     {" "}
-                    <AiFillEdit />{" "}
+                    <img src={edit} width="25px" alt="Edit" />{" "}
                   </button>
+                  <button onClick={() => deleteMessage(message.id)}>
+                    {" "}
+                    <img src={trash} width="20px" alt="Trash" />{" "}
+                  </button>{" "}
                 </td>
               </tr>
             ))}
@@ -131,8 +132,9 @@ export const Inicio: React.FC = () => {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="text">
           <input
+            className="text"
             name="text"
             value={actualMessage.text}
             placeholder="Informe a o recado que deseja deixar para que todos vejam!"

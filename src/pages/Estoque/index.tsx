@@ -1,6 +1,7 @@
 import React from "react";
 import { Title, Tabela, Formulario } from "./styles";
-import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import trash from "../../assets/trashwhite.png";
+import edit from "../../assets/editwhitee.png";
 import { api } from "../../services/api";
 
 export const Estoque: React.FC = () => {
@@ -120,9 +121,9 @@ export const Estoque: React.FC = () => {
 
   return (
     <>
-      <Title>Produtos/Insumos</Title>
+      <Title>Estoque</Title>
       <Formulario>
-        <strong> Criar/Atualizar</strong>
+        <strong> Adicionar Novo Produto ou Insumo</strong>
         <div>
           <input
             name="name"
@@ -130,20 +131,10 @@ export const Estoque: React.FC = () => {
             placeholder="Informe o nome do produto/insumo"
             onChange={handleChange}
           />
-        </div>
-        <div>
           <input
             name="description"
             value={actualProduct.description}
             placeholder="Descrição do produto"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            name="quantity"
-            value={actualProduct.quantity}
-            placeholder="Informe a quantidade"
             onChange={handleChange}
           />
         </div>
@@ -154,8 +145,6 @@ export const Estoque: React.FC = () => {
             placeholder="Informe o preço de compra"
             onChange={handleChange}
           />
-        </div>
-        <div>
           <input
             name="pricevend"
             value={actualProduct.pricevend}
@@ -164,6 +153,12 @@ export const Estoque: React.FC = () => {
           />
         </div>
         <div>
+          <input
+            name="quantity"
+            value={actualProduct.quantity}
+            placeholder="Informe a quantidade"
+            onChange={handleChange}
+          />
           <button onClick={addProduct} type="submit">
             Salvar
           </button>
@@ -175,8 +170,8 @@ export const Estoque: React.FC = () => {
           <tr>
             <th>Nome</th>
             <th>Quantidade</th>
-            <th>PreçoCompra</th>
-            <th>PreçoVenda</th>
+            <th>Preço de Compra</th>
+            <th>Preço de Venda</th>
             <th>Remove</th>
             <th>Atualiza</th>
           </tr>
@@ -195,14 +190,14 @@ export const Estoque: React.FC = () => {
                 {" "}
                 <button onClick={() => deleteProduct(product.id)}>
                   {" "}
-                  <AiFillDelete />{" "}
+                  <img src={trash} width="20px" alt="Trash" />{" "}
                 </button>
               </td>
               <td>
                 {" "}
                 <button onClick={() => updateProduct(product)}>
                   {" "}
-                  <AiFillEdit />{" "}
+                  <img src={edit} width="25px" alt="Edit" />{" "}
                 </button>
               </td>
             </tr>

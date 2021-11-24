@@ -14,12 +14,12 @@ export const Formulario = styled.form`
   margin-top: 150px;
   width: 420px;
   height: 270px;
-  background-color: ${shade(0.2, "#457b1b")};
+  background-color: ${shade(0.2, "#489141")};
   padding: 10px;
   margin-left: 150px;
   font-size: 16px;
   border-radius: 12px;
-  border: 10px solid #457b1b;
+  border: 10px solid #489141;
   strong {
     color: whitesmoke;
     font-size: 20px;
@@ -28,7 +28,7 @@ export const Formulario = styled.form`
     margin-top: 10px;
 
     input {
-      background-color: #457b1b;
+      background-color: #489141;
       padding: 10px;
       width: 400px;
       border: 1px solid #dac435;
@@ -46,7 +46,7 @@ export const Formulario = styled.form`
   button {
     width: 120px;
     height: 40px;
-    background-color: #457b1b;
+    background-color: #489141;
     border-radius: 10px;
     border: 2px solid #dac435;
     color: #dac435;

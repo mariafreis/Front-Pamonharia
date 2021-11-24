@@ -5,6 +5,7 @@ import { Financas } from "../pages/Financas";
 import { Inicio } from "../pages/Inicio";
 import { Login } from "../pages/Login";
 import { Pessoas } from "../pages/Pessoas";
+import { Rastreamento } from "../pages/Rastreamento";
 import { Usuarios } from "../pages/Usuarios";
 
 export const Routes: React.FC = () => {
@@ -16,6 +17,7 @@ export const Routes: React.FC = () => {
       <Route component={Financas} path="/financas" />
       <Route component={Pessoas} path="/pessoas" />
       <Route component={Usuarios} path="/usuarios" />
+      <Route component={Rastreamento} path="/rastreamento" />
     </Switch>
   );
 };

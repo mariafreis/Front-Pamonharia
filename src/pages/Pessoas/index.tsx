@@ -1,7 +1,8 @@
 import React from "react";
-import { Title, Form, Tabela } from "./styles";
+import { Title2, Formulario, Tabela } from "./styles";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { api } from "../../services/api";
+import { Tela } from "../Financas/styles";
 
 export const Pessoas: React.FC = () => {
   interface ICustomer {
@@ -182,152 +183,154 @@ export const Pessoas: React.FC = () => {
 
   return (
     <>
-      <Title>Clientes</Title>
-      <Form>
-        <div>
-          <input
-            name="name"
-            value={actualCustomer.name}
-            placeholder="Nome do Cliente"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            name="cpf"
-            value={actualCustomer.cpf}
-            placeholder="Informe o cpf do cliente"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            name="celular"
-            value={actualCustomer.celular}
-            placeholder="Insira o celular do cliente"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            name="endereco"
-            value={actualCustomer.endereco}
-            placeholder="Informe o endereço do cliente"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <button onClick={addCustomer} type="submit">
-            Salvar
-          </button>
-        </div>
-      </Form>
+      <Tela>
+        <Formulario>
+          <Title2>Clientes</Title2>
+          <div>
+            <input
+              name="name"
+              value={actualCustomer.name}
+              placeholder="Nome do Cliente"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <input
+              name="cpf"
+              value={actualCustomer.cpf}
+              placeholder="Informe o cpf do cliente"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <input
+              name="celular"
+              value={actualCustomer.celular}
+              placeholder="Insira o celular do cliente"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <input
+              name="endereco"
+              value={actualCustomer.endereco}
+              placeholder="Informe o endereço do cliente"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <button onClick={addCustomer} type="submit">
+              Salvar
+            </button>
+          </div>
+        </Formulario>
 
-      <Title>Vendedores</Title>
-      <Form>
-        <div>
-          <label>Nome</label>
-          <input
-            name="name"
-            value={actualVendor.name}
-            onChange={handleChangev}
-          />
-        </div>
-        <div>
-          <label>Celular</label>
-          <input
-            name="cellphone"
-            value={actualVendor.cellphone}
-            placeholder="Informe o celular do vendedor"
-            onChange={handleChangev}
-          />
-        </div>
-        <div>
-          <label>Bairros</label>
-          <input
-            name="area"
-            value={actualVendor.area}
-            placeholder="Informe os bairos que ele costuma passar"
-            onChange={handleChangev}
-          />
-        </div>
-        <div>
-          <button onClick={addVendor} type="submit">
-            Salvar
-          </button>
-        </div>
-      </Form>
-      <Tabela>
-        <thead>
-          <tr>
-            <th> Nome </th>
-            <th> CPF </th>
-            <th> Telefone </th>
-            <th> Endereço </th>
-            <th> Remove </th>
-            <th> Atualiza </th>
-          </tr>
-        </thead>
-        <tbody>
-          {customers.map((customer, index) => (
+        <Formulario>
+          <Title2>Vendedores</Title2>
+          <div>
+            <input
+              name="name"
+              value={actualVendor.name}
+              placeholder="Informe o nome do vendedor"
+              onChange={handleChangev}
+            />
+          </div>
+          <div>
+            <input
+              name="cellphone"
+              value={actualVendor.cellphone}
+              placeholder="Informe o celular do vendedor"
+              onChange={handleChangev}
+            />
+          </div>
+          <div>
+            <input
+              name="area"
+              value={actualVendor.area}
+              placeholder="Informe os bairos que ele costuma passar"
+              onChange={handleChangev}
+            />
+          </div>
+          <div>
+            <button onClick={addVendor} type="submit">
+              Salvar
+            </button>
+          </div>
+        </Formulario>
+      </Tela>
+      <Tela>
+        <Tabela>
+          <thead>
             <tr>
-              <td> {customer.name} </td>
-              <td> {customer.cpf}</td>
-              <td> {customer.celular}</td>
-              <td> {customer.endereco}</td>
-              <td>
-                {" "}
-                <button onClick={() => deleteCustomer(customer.id)}>
-                  {" "}
-                  <AiFillDelete />{" "}
-                </button>
-              </td>
-              <td>
-                {" "}
-                <button onClick={() => updateCustomer(customer)}>
-                  {" "}
-                  <AiFillEdit />{" "}
-                </button>
-              </td>
+              <th> Nome </th>
+              <th> CPF </th>
+              <th> Telefone </th>
+              <th> Endereço </th>
+              <th> Remove </th>
+              <th> Atualiza </th>
             </tr>
-          ))}
-        </tbody>
-      </Tabela>
+          </thead>
+          <tbody>
+            {customers.map((customer, index) => (
+              <tr>
+                <td> {customer.name} </td>
+                <td> {customer.cpf}</td>
+                <td> {customer.celular}</td>
+                <td> {customer.endereco}</td>
+                <td>
+                  {" "}
+                  <button onClick={() => deleteCustomer(customer.id)}>
+                    {" "}
+                    <AiFillDelete />{" "}
+                  </button>
+                </td>
+                <td>
+                  {" "}
+                  <button onClick={() => updateCustomer(customer)}>
+                    {" "}
+                    <AiFillEdit />{" "}
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Tabela>
 
-      <Tabela>
-        <thead>
-          <tr>
-            <th> Nome </th>
-            <th> Telefone </th>
-            <th> Area </th>
-            <th> Remove </th>
-            <th> Atualiza </th>
-          </tr>
-        </thead>
-        <tbody>
-          {vendors.map((vendor, index) => (
+        <Tabela>
+          <thead>
             <tr>
-              <td> {vendor.name} </td>
-              <td> {vendor.cellphone}</td>
-              <td> {vendor.area}</td>
-              <td>
-                {" "}
-                <button onClick={() => deleteVendor(vendor.id)}>
-                  {" "}
-                  <AiFillDelete />{" "}
-                </button>
-              </td>
-              <td>
-                {" "}
-                <button onClick={() => updateVendor(vendor)}>
-                  {" "}
-                  <AiFillEdit />{" "}
-                </button>
-              </td>
+              <th> Nome </th>
+              <th> Telefone </th>
+              <th> Area </th>
+              <th> Remove </th>
+              <th> Atualiza </th>
             </tr>
-          ))}
-        </tbody>
-      </Tabela>
+          </thead>
+          <tbody>
+            {vendors.map((vendor, index) => (
+              <tr>
+                <td> {vendor.name} </td>
+                <td> {vendor.cellphone}</td>
+                <td> {vendor.area}</td>
+                <td>
+                  {" "}
+                  <button onClick={() => deleteVendor(vendor.id)}>
+                    {" "}
+                    <AiFillDelete />{" "}
+                  </button>
+                </td>
+                <td>
+                  {" "}
+                  <button onClick={() => updateVendor(vendor)}>
+                    {" "}
+                    <AiFillEdit />{" "}
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Tabela>
+      </Tela>
     </>
   );
 };

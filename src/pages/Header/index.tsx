@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Navegacao } from "./styles";
-import sair from "../../assets/sair.png";
-import logo from "../../assets/logo.jpeg";
+import sair from "../../assets/sairwhite.png";
+import logo from "../../assets/logo.png";
 
 export const Header: React.FC = () => {
   return (
@@ -34,13 +34,13 @@ export const Header: React.FC = () => {
             <NavLink to="/"> Vendas </NavLink>
           </li>
           <li>
-            <NavLink to="/"> Rastreamento </NavLink>
+            <NavLink to="/rastreamento"> Rastreamento </NavLink>
           </li>
           <div>
             <li>
               <NavLink to="/">
                 {" "}
-                <img src={sair} width="50px" alt="Sair" />{" "}
+                <img src={sair} width="45px" alt="Sair" />{" "}
               </NavLink>
             </li>
           </div>

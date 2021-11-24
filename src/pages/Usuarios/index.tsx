@@ -128,8 +128,6 @@ export const Usuarios: React.FC = () => {
             placeholder="Informe o nome do usuário"
             onChange={handleChange}
           />
-        </div>
-        <div>
           <input
             name="email"
             value={actualUser.email}
@@ -144,8 +142,6 @@ export const Usuarios: React.FC = () => {
             placeholder="Informe a senha"
             onChange={handleChange}
           />
-        </div>
-        <div>
           <input
             name="nickname"
             value={actualUser.nickname}
@@ -160,8 +156,6 @@ export const Usuarios: React.FC = () => {
             placeholder="Informe a ocupação"
             onChange={handleChange}
           />
-        </div>
-        <div>
           <button onClick={addUser} type="submit">
             Salvar
           </button>

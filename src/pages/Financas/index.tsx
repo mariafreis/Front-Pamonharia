@@ -1,7 +1,9 @@
 import React from "react";
-import { Title, Form, Tabela } from "./styles";
-import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import { Title, Formulario, Tabela, Tela } from "./styles";
+import trash from "../../assets/trashwhite.png";
+import edit from "../../assets/editwhitee.png";
 import { api } from "../../services/api";
+import { Title2 } from "../Inicio/styles";
 
 export const Financas: React.FC = () => {
   interface IFinance {
@@ -99,81 +101,84 @@ export const Financas: React.FC = () => {
   return (
     <>
       <Title>Finanças</Title>
-      <Form>
-        <div>
-          <input
-            name="descricao"
-            value={actualFinance.descricao}
-            placeholder="Descrição da finança"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            name="natureza"
-            value={actualFinance.natureza}
-            placeholder="Informe a natureza da operação: entrada\saida"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            name="valor"
-            value={actualFinance.valor}
-            placeholder="Informe o valor da finança"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            name="parcelas"
-            value={actualFinance.parcelas}
-            placeholder="Informe a quantidade de parcelas"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <button onClick={addFinance} type="submit">
-            Salvar
-          </button>
-        </div>
-      </Form>
-      <Tabela>
-        <thead>
-          <tr>
-            <th> Natureza </th>
-            <th> Valor </th>
-            <th> Descrição </th>
-            <th> Parcelas </th>
-            <th> Remove </th>
-            <th> Atualiza </th>
-          </tr>
-        </thead>
-        <tbody>
-          {finances.map((finance, index) => (
+      <Tela>
+        <Tabela>
+          <thead>
             <tr>
-              <td> {finance.natureza} </td>
-              <td> {finance.valor}</td>
-              <td> {finance.descricao}</td>
-              <td> {finance.parcelas}</td>
-              <td>
-                {" "}
-                <button onClick={() => deleteFinance(finance.id)}>
-                  {" "}
-                  <AiFillDelete />{" "}
-                </button>
-              </td>
-              <td>
-                {" "}
-                <button onClick={() => updateFinance(finance)}>
-                  {" "}
-                  <AiFillEdit />{" "}
-                </button>
-              </td>
+              <th> Natureza </th>
+              <th> Valor </th>
+              <th> Descrição </th>
+              <th> Parcelas </th>
+              <th> Remove </th>
+              <th> Atualiza </th>
             </tr>
-          ))}
-        </tbody>
-      </Tabela>
+          </thead>
+          <tbody>
+            {finances.map((finance, index) => (
+              <tr>
+                <td> {finance.natureza} </td>
+                <td> {finance.valor}</td>
+                <td> {finance.descricao}</td>
+                <td> {finance.parcelas}</td>
+                <td>
+                  {" "}
+                  <button onClick={() => deleteFinance(finance.id)}>
+                    {" "}
+                    <img src={trash} width="20px" alt="Trash" />{" "}
+                  </button>
+                </td>
+                <td>
+                  {" "}
+                  <button onClick={() => updateFinance(finance)}>
+                    {" "}
+                    <img src={edit} width="25px" alt="Edit" />{" "}
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Tabela>
+        <Formulario>
+          <div>
+            <Title2> Inserir Nova Finança </Title2>
+            <input
+              name="descricao"
+              value={actualFinance.descricao}
+              placeholder="Descrição da finança"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <input
+              name="natureza"
+              value={actualFinance.natureza}
+              placeholder="Informe a natureza da operação: entrada\saida"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <input
+              name="valor"
+              value={actualFinance.valor}
+              placeholder="Informe o valor da finança"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <input
+              name="parcelas"
+              value={actualFinance.parcelas}
+              placeholder="Informe a quantidade de parcelas"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <button onClick={addFinance} type="submit">
+              Salvar
+            </button>
+          </div>
+        </Formulario>
+      </Tela>
     </>
   );
 };
