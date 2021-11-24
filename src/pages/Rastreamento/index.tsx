@@ -1,5 +1,5 @@
 import React from "react";
-import { Tabela, Title } from "./styles";
+import { Tabela, Title, Tela, Ajuste } from "./styles";
 import { api } from "../../services/api";
 
 export const Rastreamento: React.FC = () => {
@@ -35,32 +35,39 @@ export const Rastreamento: React.FC = () => {
 
   return (
     <>
-      <Title> Rastreamento de vendedores </Title>
-      <Tabela>
-        <thead>
-          <tr>
-            <th> Nome </th>
-            <th> CPF </th>
-            <th> Telefone </th>
-            <th> Endereço </th>
-            <th> Rastrear Vendedor Próximo </th>
-          </tr>
-        </thead>
-        <tbody>
-          {customers.map((customer, index) => (
+      <Tela>
+        <Title> Rastreamento de vendedores </Title>
+        <Tabela>
+          <thead>
             <tr>
-              <td> {customer.name} </td>
-              <td> {customer.cpf}</td>
-              <td> {customer.celular}</td>
-              <td> {customer.endereco}</td>
-              <td>
-                {" "}
-                <button type="submit">Rastrear</button>
-              </td>
+              <th> Cliente </th>
+              <th> Telefone </th>
+              <th> Endereço </th>
+              <th> Rastrear Vendedor Próximo </th>
             </tr>
-          ))}
-        </tbody>
-      </Tabela>
+          </thead>
+          <tbody>
+            <tr>
+              <td> Luana Patricia </td>
+              <td> (16)99159-8832 </td>
+              <td> Rua José Marques Garcia, 479 </td>
+              <td> Rastreando...</td>
+            </tr>
+
+            {customers.map((customer, index) => (
+              <tr>
+                <td> {customer.name} </td>
+                <td> {customer.celular}</td>
+                <td> {customer.endereco}</td>
+                <td>
+                  {" "}
+                  <button type="submit">Rastrear</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Tabela>
+      </Tela>
     </>
   );
 };
