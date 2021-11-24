@@ -28,10 +28,10 @@ export const Header: React.FC = () => {
             <NavLink to="/usuarios"> Usuários </NavLink>
           </li>
           <li>
-            <NavLink to="/"> Caixas </NavLink>
+            <NavLink to="/caixas"> Caixas </NavLink>
           </li>
           <li>
-            <NavLink to="/"> Vendas </NavLink>
+            <NavLink to="/vendas"> Vendas </NavLink>
           </li>
           <li>
             <NavLink to="/rastreamento"> Rastreamento </NavLink>

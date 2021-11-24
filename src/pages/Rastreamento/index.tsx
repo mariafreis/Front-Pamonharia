@@ -1,5 +1,5 @@
 import React from "react";
-import { Tabela, Title, Tela, Ajuste } from "./styles";
+import { Tabela, Title, Tela } from "./styles";
 import { api } from "../../services/api";
 
 export const Rastreamento: React.FC = () => {
@@ -61,7 +61,7 @@ export const Rastreamento: React.FC = () => {
                 <td> {customer.endereco}</td>
                 <td>
                   {" "}
-                  <button type="submit">Rastrear</button>
+                  <button>Rastrear</button>
                 </td>
               </tr>
             ))}

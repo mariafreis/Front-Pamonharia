@@ -7,6 +7,7 @@ import { Login } from "../pages/Login";
 import { Pessoas } from "../pages/Pessoas";
 import { Rastreamento } from "../pages/Rastreamento";
 import { Usuarios } from "../pages/Usuarios";
+import { Vendas } from "../pages/Vendas";
 
 export const Routes: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ export const Routes: React.FC = () => {
       <Route component={Pessoas} path="/pessoas" />
       <Route component={Usuarios} path="/usuarios" />
       <Route component={Rastreamento} path="/rastreamento" />
+      <Route component={Vendas} path="/vendas" />
     </Switch>
   );
 };
